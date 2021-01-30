@@ -136,6 +136,11 @@ async function denoifyTsFile(file, depth) {
       continue;
     }
 
+    if (line === 'import { bodyChecksumGenerator } from "../body-checksum-node/mod.ts";') {
+      output.push('import { bodyChecksumGenerator } from "https://jspm.dev/@aws-sdk/body-checksum-browser";');
+      continue;
+    }
+
     if (line === 'import packageInfo from "./package.json";') {
       const pkgjson = await fsx.readJson(path.join(path.dirname(file), "package.json"));
       output.push(`const packageInfo = { version: "${pkgjson.version}" };`);
