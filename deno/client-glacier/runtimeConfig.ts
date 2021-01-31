@@ -1,6 +1,6 @@
 const packageInfo = { version: "3.4.1" };
 
-import { bodyChecksumGenerator } from "../body-checksum-node/mod.ts";
+import { bodyChecksumGenerator } from "https://jspm.dev/@aws-sdk/body-checksum-browser";
 import { NODE_REGION_CONFIG_FILE_OPTIONS, NODE_REGION_CONFIG_OPTIONS } from "../config-resolver/mod.ts";
 import { defaultProvider as credentialDefaultProvider } from "../credential-provider-node/mod.ts";
 import { Hash } from "https://jspm.dev/@aws-sdk/hash-node";
